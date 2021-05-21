@@ -8,4 +8,6 @@ mydb = mysql.connector.connect(
 )
 
 mycursor = mydb.cursor()
-mycursor.execute('CREATE TABLE users (login VARCHAR(255), password INTEGER(10))')
+mycursor.execute('SHOW TABLES')
+for tb in mycursor:
+    print(tb)
