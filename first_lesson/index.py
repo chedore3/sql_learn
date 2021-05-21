@@ -8,6 +8,9 @@ mydb = mysql.connector.connect(
 )
 
 mycursor = mydb.cursor()
-mycursor.execute('SHOW TABLES')
-for tb in mycursor:
-    print(tb)
+
+sqlformula = 'INSERT INTO users (login, password) VALUES (%s, %s)'
+user1 = ('user1', '123')
+
+mycursor.execute(sqlformula, user1)
+mydb.commit()
